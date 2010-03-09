@@ -19,6 +19,19 @@
         //cancel event
         return false;
       });
+      // Here be code to make it close when you click outside the panel:
+      // .live("quickactions.close", function() {
+      //   $(this).removeClass("active");
+      //   var disclosure = $(this).siblings(".quickactions_menu").first();
+      //   disclosure.hide();
+      // });
+      // $("body").bind("click", function() {
+      //   // I'm sure there's a better jQuery way to specify a graph of nodes that should not trigger the close behavior, but
+      //   // I took the easy way out:
+      //   if($(this).is("body")) { 
+      //     $(".menu_toggle").trigger("quickactions.close");
+      //   }
+      // });
     });
   </script>
 </head>
@@ -60,6 +73,21 @@
     });
   });</code>
   </pre>
+  
+  <p>If you want it to close when the user clicks anywhere else on the page, add:</p>
+  <pre><code> .live("quickactions.close", function() {
+     $(this).removeClass("active");
+     var disclosure = $(this).siblings(".quickactions_menu").first();
+     disclosure.hide();
+   });
+   $("body").bind("click", function() {
+     // I'm sure there's a better jQuery way to specify a graph of nodes that should not trigger the close behavior, but
+     // I took the easy way out:
+     if($(this).is("body")) { 
+       $(".menu_toggle").trigger("quickactions.close");
+     }
+   });
+  </code></pre>
   
   <p>The <em>required</em> css is quite minimal as well. To make it look good is another thing altogether. See the attached stylesheet.</p>
   <pre><code>  div.quickactions  {
