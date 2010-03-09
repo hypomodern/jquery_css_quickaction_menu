@@ -1,0 +1,102 @@
+/* QuickActions Site Styles */
+body {
+  margin: 1em;
+}
+
+/* quickactions -- these are the core styles to create a "flyout" style disclosure intended for controls */
+div.quickactions  {
+  position: relative;
+  display: inline;
+  
+  font-size: .5em;
+}
+
+.quickactions .menu_toggle {
+  position: relative;
+  z-index: 15;
+  
+  /* these are now decorative */
+  text-decoration: none;
+  font-weight: normal;
+  border: 1px solid #ddd;
+  padding: 0.5em 1em 0.5em 2em;
+  background: #F7F5F1 url("16-file-archive.png") no-repeat;
+  background-position: 0.5em;
+
+  -webkit-transition: all 0.2s ease-in;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius:    0.5em;
+  border-radius:         0.5em;
+}
+
+.quickactions .menu_toggle.active {
+  border-color: #eee;
+  background-color: #eee;
+  width: 10em;
+}
+
+.quickactions .menu_toggle:hover {
+  background-color: #D4DEEF;
+  color: #336699;
+
+  -webkit-transition: all 0.2s ease-in;
+}
+
+.quickactions .menu_toggle.active:hover {
+  background-color: #eee;
+}
+
+.quickactions .quickactions_menu {
+  position: absolute;
+  overflow: auto;
+  left: 0;
+  top: 1.5em;
+  width: 15em;
+  z-index: 10;
+  padding: 2px 2px 0.5em 2px;
+  
+  /* these are now decorative */
+  border: 2px solid #999;
+  background-color: #eee;
+
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius:    0.5em;
+  border-radius:         0.5em;
+  -moz-box-shadow:       0.2em 0.2em 1em rgba(68, 68, 68, 0.33);
+  -webkit-box-shadow:    0.2em 0.2em 1em rgba(68, 68, 68, 0.33);
+  box-shadow:            0.2em 0.2em 1em rgba(68, 68, 68, 0.33);
+}
+
+.quickactions .quickactions_menu hr {
+  margin-top: 0;
+}
+
+.quickactions .menu_action {
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  display: block;
+  
+  margin: 0.25em;
+  border: 1px solid #ddd;
+  padding: 0.75em 1em;
+  line-height: 1em;
+  background-color: #F7F5F1;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(#ccc), to(#bbb));
+  background-image: -moz-linear-gradient(90deg, #bbb, #ccc);
+
+  -moz-box-shadow:    0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  box-shadow:         0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(255,255,255,0.25);
+
+  -webkit-border-radius:  0.25em;
+  -moz-border-radius:     0.25em;
+  border-radius:          0.25em;]
+}
+
+.quickactions .menu_action:hover {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(#bbb), to(#ccc));
+  background-image: -moz-linear-gradient(90deg, #ccc, #bbb);
+}
+/* end quickactions */

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="assets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="assets/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <script src="assets/jquery-min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <title>An Inviting Quick-Actions Panel</title>
+  
+  <script type="text/javascript">
+    jQuery(function($) {
+      $(".menu_toggle").live("click", function() {
+        $(this).toggleClass("active");
+        var disclosure = $(this).siblings(".quickactions_menu").first();
+        disclosure.
+          toggle().
+          css({ top: "-9px", left: "-2px", paddingTop: $(this).outerHeight() + 2 + "px" });
+           
+        //cancel event
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  
+  <h2>
+    Here's the Beef
+    <div class="quickactions">
+      <a href="#quickaction_menu" rel="quickaction_menu" class="menu_toggle">Quick Actions</a>
+      <div class="quickactions_menu" style="display:none;">
+        <hr />
+        <a href="#foo" class="menu_action">Leap Through CSS3 Hoops</a>
+        <a href="#bar" class="menu_action">Get Prizes</a>
+        <a href="#baz" class="menu_action">Redeem Tickets</a>
+      </div>
+    </div>
+  </h2>
+  
+  <p>Now, the only question is: what would you like to do with it?</p>
+  
+  <p>For my money, the great advantage of this UI pattern is that it allows the designer to expose "Power User" features in a minimally obtrusive manner. All of the actions listed in the dropdown should be available from other screens in your application: this would be a list of common next steps that an advanced user might want to directly launch right into after viewing this page.
+  </p>
+  
+  <p>I also tend to prefer to keep control surfaces big, inviting, and kinda chunky, so when an interface gets complex this is a way to avoid clutter.</p>
+  
+  <h5>Required Code</h5>
+  
+  <p>There's really very little code required:</p>
+  <pre><code>  jQuery(function($) {
+    $(".menu_toggle").live("click", function() {
+      $(this).toggleClass("active");
+      var disclosure = $(this).siblings(".quickactions_menu").first();
+      disclosure.
+        toggle().
+        css({ top: "-9px", left: "-2px", paddingTop: $(this).outerHeight() + 2 + "px" });
+         
+      //cancel event
+      return false;
+    });
+  });</code>
+  </pre>
+  
+  <p>The <em>required</em> css is quite minimal as well. To make it look good is another thing altogether. See the attached stylesheet.</p>
+  <pre><code>  div.quickactions  {
+    position: relative;
+    display: inline;
+  }
+  .quickactions .menu_toggle {
+    position: relative;
+    z-index: 15;
+  }
+  .quickactions .quickactions_menu {
+    position: absolute;
+    overflow: auto;
+    left: 0;
+    top: 1.5em;
+    width: 15em;
+    z-index: 10;
+  }</code></pre>
+</body>
+</html>
